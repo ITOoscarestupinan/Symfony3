@@ -29,7 +29,7 @@ use Sonata\UserBundle\Entity\BaseGroup as BaseGroup;
  * Group
  *
  * @ORM\Table(name="fos_user_group")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Application\Sonata\UserBundle\Entity\Repository\GroupRepository")
  */
 class Group extends BaseGroup {
 

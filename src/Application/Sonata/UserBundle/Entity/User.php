@@ -29,7 +29,7 @@ use Sonata\UserBundle\Entity\BaseUser as BaseUser;
  * User
  *
  * @ORM\Table(name="fos_user_user")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Application\Sonata\UserBundle\Entity\Repository\UserRepository")
  */
 class User extends BaseUser {
 
