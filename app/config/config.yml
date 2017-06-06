@@ -100,9 +100,11 @@ guzzle:
 knp_snappy:
     pdf:
         enabled:    true
-        binary:     /usr/local/bin/wkhtmltopdf
+        binary:     '%kernel.root_dir%/../lib/wkhtmltopdf'
+#        options:
+#            javascript-delay: 3000
         options:    []
     image:
         enabled:    true
-        binary:     /usr/local/bin/wkhtmltoimage 
+        binary:     '%kernel.root_dir%/../lib/wkhtmltopdf'
         options:    []
