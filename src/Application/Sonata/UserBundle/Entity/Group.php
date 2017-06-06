@@ -11,6 +11,7 @@
 
 namespace Application\Sonata\UserBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use Sonata\UserBundle\Entity\BaseGroup as BaseGroup;
 
 /**
@@ -23,20 +24,20 @@ use Sonata\UserBundle\Entity\BaseGroup as BaseGroup;
  *
  * @author <yourname> <youremail>
  */
-class Group extends BaseGroup
-{
+
+/**
+ * Group
+ *
+ * @ORM\Table(name="fos_user_group")
+ * @ORM\Entity
+ */
+class Group extends BaseGroup {
+
     /**
-     * @var int $id
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
-    /**
-     * Get id
-     *
-     * @return int $id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 }

@@ -11,6 +11,7 @@
 
 namespace Application\Sonata\UserBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use Sonata\UserBundle\Entity\BaseUser as BaseUser;
 
 /**
@@ -23,10 +24,19 @@ use Sonata\UserBundle\Entity\BaseUser as BaseUser;
  *
  * @author <yourname> <youremail>
  */
-class User extends BaseUser
-{
+
+/**
+ * User
+ *
+ * @ORM\Table(name="fos_user_user")
+ * @ORM\Entity
+ */
+class User extends BaseUser {
+
     /**
-     * @var int $id
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
@@ -35,8 +45,8 @@ class User extends BaseUser
      *
      * @return int $id
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

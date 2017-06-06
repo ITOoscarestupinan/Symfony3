@@ -25,6 +25,15 @@ class AppKernel extends Kernel {
             new Sonata\AdminBundle\SonataAdminBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle(),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Liuggio\ExcelBundle\LiuggioExcelBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
