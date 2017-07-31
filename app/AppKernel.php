@@ -14,7 +14,6 @@ class AppKernel extends Kernel {
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new AppBundle\AppBundle(),
             // These are the other bundles the SonataAdminBundle relies on
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
@@ -34,6 +33,8 @@ class AppKernel extends Kernel {
             new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new Liuggio\ExcelBundle\LiuggioExcelBundle(),
+            new LogicBundle\LogicBundle(),
+            new AdminBundle\AdminBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

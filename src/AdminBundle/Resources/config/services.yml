@@ -1,0 +1,4 @@
+services:
+    admin.login_success_handler:
+        class: AdminBundle\Service\LoginSuccessHandler
+        arguments:  ["@router", "@security.authorization_checker"]

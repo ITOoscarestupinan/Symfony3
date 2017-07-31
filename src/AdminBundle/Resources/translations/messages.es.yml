@@ -1,0 +1,25 @@
+titulo:
+    ingresar: Ingresar
+    regresar inicio: Regresar
+    solicitud contrasena: Solicitud exitosa
+    reestablecer contrasena: Reestablecer contraseña
+    
+menu publico:
+    sistema informacion: Sistema de Información
+    el instituto: El instituto
+    sala de prensa: Sala de prensa
+    atencion ciudadana: Atención ciudadana
+    observatorio: Observatorio
+
+formulario:
+    login:
+        registrarse: Registrarse
+    reestablecer contrasena:
+        campo:
+            usuario: Nombre de usuario
+        error:
+            usuario_invalido: El usuario "%username%" no existe.
+
+boton:
+    enviar: Enviar
+        
