@@ -13,6 +13,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class TerminosYCondiciones {
 
+    public function __toString() {
+        return $this->nombre ? $this->nombre : ''   ;
+    }
     /**
      * @var int
      *

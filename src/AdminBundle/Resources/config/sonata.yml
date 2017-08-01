@@ -15,6 +15,8 @@ sonata_block:
         sonata.block.service.text: # used to if you plan to use Sonata user routes
 
 sonata_admin:
+    options:
+        html5_validate:       false
     templates:
         layout:                AdminBundle::standard_layout.html.twig
         knp_menu_template:     AdminBundle:Menu:sonata_menu.html.twig
@@ -26,4 +28,13 @@ sonata_admin:
                 roles: [ROLE_SUPER_ADMIN]
                 label: 'Seguridad y acceso'
                 icon:   '<i class="fa fa-lock"></i>'
+            admin:
+                roles: [ROLE_SUPER_ADMIN]
+                label: 'Cosas admin'
+                icon:   '<i class="fa fa-signal"></i>'
+
+        blocks:
+            # display a dashboard block
+            - { position: left,  type: sonata.admin.block.admin_list, settings: { groups: [sonata_user] } }
+            - { position: right,  type: sonata.admin.block.admin_list, settings: { groups: [admin] } }
         

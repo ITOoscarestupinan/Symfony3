@@ -156,9 +156,9 @@ file that was distributed with this source code.
                                     <li><a href="#">A-</a></li>
                                     <li><a href="#">A</a></li>
                                     <li><a href="#">A+</a></li>
-                                    <li><a href="#">Contraste</a></li>
-                                    <li><a href="#">Inclusión</a></li>
-                                    <li><a href="#">Ayuda</a></li>
+                                        {# <li><a href="#">Contraste</a></li>
+                                         <li><a href="#">Inclusión</a></li>
+                                         <li><a href="#">Ayuda</a></li>#}
                                         {% include 'AdminBundle:Menu:icono_perfil.html.twig'%}
                                 </ul>
                                 <!--redes pantallas pequeñas-->
@@ -211,6 +211,76 @@ file that was distributed with this source code.
                                 </div>
                             </div>                             
                             <!-- / cabecera logos pantallas pequeñas-->
+                            <!-- menú principal-->  
+                            <div class="container-fluid">
+                                <nav class="navbar navbar-default">
+                                    <div class="navbar-header">
+                                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
+                                    </div>
+
+                                    <div class="collapse navbar-collapse js-navbar-collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="#">{{'menu publico.el instituto'|trans}}</a></li>
+                                            <li><a href="#">{{'menu publico.sala de prensa'|trans}}</a></li>
+                                            <li><a href="#">{{'menu publico.atencion ciudadana'|trans}}</a></li>
+                                            <li><a href="#">{{'menu publico.observatorio'|trans}}</a></li>
+                                                {#                                            <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>#}
+                                                {# <div class="navbar-custom-menu">
+                                                     <ul class="nav navbar-nav">
+                                                         {% block sonata_top_nav_menu_add_block %}
+                                                             <li class="dropdown">
+                                                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                     <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                                                 </a>
+                                                                 {% include sonata_admin.adminPool.getTemplate('add_block') %}
+                                                             </li>
+                                                         {% endblock %}
+                                                     </ul>
+                                                 </div>#}
+                                                {% if app.user and is_granted('ROLE_SONATA_ADMIN') %}
+                                                    {% block sonata_sidebar_search %}
+                                                    <li class="dropdown buscador">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                                        <div class="dropdown-menu contenedor-buscador">
+                                                            <div class="input-group">
+                                                                <form action="{{ path('sonata_admin_search') }}" method="GET" class="navbar-form navbar-left buscador" role="search">
+                                                                    <input  type="text" name="q" class="form-control" id="buscador" value="{{ app.request.get('q') }}" placeholder="{{ 'search_placeholder'|trans({}, 'SonataAdminBundle') }}">
+                                                                    <span class="input-group-btn">
+                                                                        <button class="btn btn-flat" name="search" type="submit" id="search-btn">
+                                                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                                                        </button>
+                                                                    </span>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                {% endblock sonata_sidebar_search %}
+                                                <li class="dropdown mega-dropdown">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'menu publico.sistema informacion'|trans}}<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                                    <ul class="dropdown-menu mega-dropdown-menu row">
+
+                                                        {% block sonata_side_nav %}
+                                                            {% block side_bar_before_nav %} {% endblock %}
+                                                            {% block side_bar_nav %}
+                                                                {{ knp_menu_render('sonata_admin_sidebar', {template: sonata_admin.adminPool.getTemplate('knp_menu_template')}) }}
+                                                            {% endblock side_bar_nav %}
+                                                        {% endblock sonata_side_nav %}
+                                                    </ul>
+                                                </li>
+                                            {% endif %}
+                                            {% include 'AdminBundle:Menu:icono_perfil.html.twig'%}
+                                        </ul>
+                                    </div>                               
+                                </nav>
+                            </div>                                        
+
+                            <!-- / menú principal--> 
                             <!--menu inclusión móvil-->
 
                             <div class="container-fluid contenedor-inclusion">
@@ -247,69 +317,6 @@ file that was distributed with this source code.
                             </div>
                             <!-- / menu inclusión móvil-->                    
 
-                            <div id="navegacion-principal" class="container">
-                                <div class="navbar-header">
-                                    <a href="{{path('sonata_admin_dashboard')}}" class="navbar-brand inicio-icono"><i class="fa fa-home" aria-hidden="true"></i></a>
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                                        <i class="fa fa-bars"></i>
-                                    </button>
-                                </div>
-
-                                <!-- Collect the nav links, forms, and other content for toggling -->
-                                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                                    <div>
-                                        <ul class="nav navbar-nav">
-                                            {% if app.user and is_granted('ROLE_SONATA_ADMIN') %}
-                                                <li>
-                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'menu publico.sistema informacion'|trans}}<span class="caret"></span></a>
-
-                                                    {% block sonata_side_nav %}
-                                                        {% block side_bar_before_nav %} {% endblock %}
-                                                        {% block side_bar_nav %}
-                                                            {{ knp_menu_render('sonata_admin_sidebar', {template: sonata_admin.adminPool.getTemplate('knp_menu_template')}) }}
-                                                        {% endblock side_bar_nav %}
-                                                    {% endblock sonata_side_nav %}
-                                                </li>
-                                            {% endif %}
-                                            <li><a href="#">{{'menu publico.el instituto'|trans}}</a></li>
-                                            <li><a href="#">{{'menu publico.sala de prensa'|trans}}</a></li>
-                                            <li><a href="#">{{'menu publico.atencion ciudadana'|trans}}</a></li>
-                                            <li><a href="#">{{'menu publico.observatorio'|trans}}</a></li>
-                                            <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
-
-                                            {% include 'AdminBundle:Menu:icono_perfil.html.twig'%}
-                                            {# <div class="navbar-custom-menu">
-                                                 <ul class="nav navbar-nav">
-                                                     {% block sonata_top_nav_menu_add_block %}
-                                                         <li class="dropdown">
-                                                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                 <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                                             </a>
-                                                             {% include sonata_admin.adminPool.getTemplate('add_block') %}
-                                                         </li>
-                                                     {% endblock %}
-                                                 </ul>
-                                             </div>#}
-                                            {% if app.user and is_granted('ROLE_SONATA_ADMIN') %}
-                                                {% block sonata_sidebar_search %}
-                                                    <form action="{{ path('sonata_admin_search') }}" method="GET" class="navbar-form navbar-left buscador" role="search">
-                                                        <div class="input-group">
-                                                            <input  type="text" name="q" class="form-control" id="buscador" value="{{ app.request.get('q') }}" placeholder="{{ 'search_placeholder'|trans({}, 'SonataAdminBundle') }}">
-                                                            <span class="input-group-btn">
-                                                                <button class="btn btn-flat" name="search" type="submit" id="search-btn">
-                                                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                                                </button>
-                                                            </span>
-                                                        </div>
-                                                    </form>
-                                                {% endblock sonata_sidebar_search %}
-                                            {% endif%}
-
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
                             <!-- /.navbar-collapse -->
                             <!-- Navbar Right Menu -->
 
@@ -403,47 +410,7 @@ file that was distributed with this source code.
                                                 {% if _list_filters_actions is not empty %}
                                                     {{ _list_filters_actions|raw }}
                                                 {% endif %}
-                                                <div class="navbar-right">
-                                                    {% block sonata_breadcrumb %}
-                                                        <div class="hidden-xs">
-                                                            {% if _breadcrumb is not empty or action is defined %}
-                                                                <ol class="nav navbar-top-links breadcrumb">
-                                                                    {% if _breadcrumb is empty %}
-                                                                        {% if action is defined %}
-                                                                            {% for menu in breadcrumbs_builder.breadcrumbs(admin, action) %}
-                                                                                {%- set translation_domain = menu.extra('translation_domain', 'messages') -%}
-                                                                                {%- set label = menu.label -%}
-                                                                                {%- if translation_domain is not same as(false) -%}
-                                                                                {%- set label = label|trans(menu.extra('translation_params', {}), translation_domain) -%}
-                                                                                {%- endif -%}
 
-                                                                                {% if not loop.last %}
-                                                                                    <li>
-                                                                                        {% if menu.uri is not empty %}
-                                                                                            <a href="{{ menu.uri }}">
-                                                                                                {% if menu.extra('safe_label', true) %}
-                                                                                                    {{- label|raw -}}
-                                                                                                {% else %}
-                                                                                                    {{- label -}}
-                                                                                                {% endif %}
-                                                                                            </a>
-                                                                                        {% else %}
-                                                                                            <span>{{ label }}</span>
-                                                                                        {% endif %}
-                                                                                    </li>
-                                                                                {% else %}
-                                                                                    <li class="active"><span>{{ label }}</span></li>
-                                                                                        {% endif %}
-                                                                                    {% endfor %}
-                                                                                {% endif %}
-                                                                            {% else %}
-                                                                                {{ _breadcrumb|raw }}
-                                                                            {% endif %}
-                                                                </ol>
-                                                            {% endif %}
-                                                        </div>
-                                                    {% endblock sonata_breadcrumb %}
-                                                </div>
                                             </div>
                                         </div>
                                     </nav>
@@ -451,6 +418,47 @@ file that was distributed with this source code.
 
                             {% endblock sonata_page_content_nav %}
                         {% endblock sonata_page_content_header %}
+                        <div class="navbar-right">
+                            {% block sonata_breadcrumb %}
+                                <div class="hidden-xs">
+                                    {% if _breadcrumb is not empty or action is defined %}
+                                        <ol class="nav navbar-top-links breadcrumb">
+                                            {% if _breadcrumb is empty %}
+                                                {% if action is defined %}
+                                                    {% for menu in breadcrumbs_builder.breadcrumbs(admin, action) %}
+                                                        {%- set translation_domain = menu.extra('translation_domain', 'messages') -%}
+                                                        {%- set label = menu.label -%}
+                                                        {%- if translation_domain is not same as(false) -%}
+                                                        {%- set label = label|trans(menu.extra('translation_params', {}), translation_domain) -%}
+                                                        {%- endif -%}
+
+                                                        {% if not loop.last %}
+                                                            <li>
+                                                                {% if menu.uri is not empty %}
+                                                                    <a href="{{ menu.uri }}">
+                                                                        {% if menu.extra('safe_label', true) %}
+                                                                            {{- label|raw -}}
+                                                                        {% else %}
+                                                                            {{- label -}}
+                                                                        {% endif %}
+                                                                    </a>
+                                                                {% else %}
+                                                                    <span>{{ label }}</span>
+                                                                {% endif %}
+                                                            </li>
+                                                        {% else %}
+                                                            <li class="active"><span>{{ label }}</span></li>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        {% endif %}
+                                                    {% else %}
+                                                        {{ _breadcrumb|raw }}
+                                                    {% endif %}
+                                        </ol>
+                                    {% endif %}
+                                </div>
+                            {% endblock sonata_breadcrumb %}
+                        </div>
                     </section>
 
                     <section class="content">

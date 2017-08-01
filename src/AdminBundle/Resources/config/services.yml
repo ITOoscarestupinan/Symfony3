@@ -2,3 +2,285 @@ services:
     admin.login_success_handler:
         class: AdminBundle\Service\LoginSuccessHandler
         arguments:  ["@router", "@security.authorization_checker"]
+
+    admin.admin.categoria_disciplina:
+        class: AdminBundle\Admin\CategoriaDisciplinaAdmin
+        arguments: [~, LogicBundle\Entity\CategoriaDisciplina, AdminBundle:CategoriaDisciplinaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: CategoriaDisciplina }
+
+    admin.admin.tipo_recurso:
+        class: AdminBundle\Admin\TipoRecursoAdmin
+        arguments: [~, LogicBundle\Entity\TipoRecurso, AdminBundle:TipoRecursoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: TipoRecurso }
+
+    admin.admin.tipo_documento:
+        class: AdminBundle\Admin\TipoDocumentoAdmin
+        arguments: [~, LogicBundle\Entity\TipoDocumento, AdminBundle:TipoDocumentoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: TipoDocumento }
+
+    admin.admin.terminos_y_condiciones_evento:
+        class: AdminBundle\Admin\TerminosYCondicionesEventoAdmin
+        arguments: [~, LogicBundle\Entity\TerminosYCondicionesEvento, AdminBundle:TerminosYCondicionesEventoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: TerminosYCondicionesEvento }
+
+    admin.admin.sistema_puntaje:
+        class: AdminBundle\Admin\SistemaPuntajeAdmin
+        arguments: [~, LogicBundle\Entity\SistemaPuntaje, AdminBundle:SistemaPuntajeAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: SistemaPuntaje }
+
+    admin.admin.atributo_disciplina:
+        class: AdminBundle\Admin\AtributoDisciplinaAdmin
+        arguments: [~, LogicBundle\Entity\AtributoDisciplina, AdminBundle:AtributoDisciplinaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: AtributoDisciplina }
+
+    admin.admin.modalidad_evento:
+        class: AdminBundle\Admin\ModalidadEventoAdmin
+        arguments: [~, LogicBundle\Entity\ModalidadEvento, AdminBundle:ModalidadEventoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: ModalidadEvento }
+
+    admin.admin.estado_contrato:
+        class: AdminBundle\Admin\EstadoContratoAdmin
+        arguments: [~, LogicBundle\Entity\EstadoContrato, AdminBundle:EstadoContratoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: EstadoContrato }
+
+    admin.admin.variable_global:
+        class: AdminBundle\Admin\VariableGlobalAdmin
+        arguments: [~, LogicBundle\Entity\VariableGlobal, AdminBundle:VariableGlobalAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: VariableGlobal }
+
+    admin.admin.rama:
+        class: AdminBundle\Admin\RamaAdmin
+        arguments: [~, LogicBundle\Entity\Rama, AdminBundle:RamaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Rama }
+
+    admin.admin.oferta:
+        class: AdminBundle\Admin\OfertaAdmin
+        arguments: [~, LogicBundle\Entity\Oferta, AdminBundle:OfertaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Oferta }
+
+    admin.admin.proyecto:
+        class: AdminBundle\Admin\ProyectoAdmin
+        arguments: [~, LogicBundle\Entity\Proyecto, AdminBundle:ProyectoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Proyecto }
+
+    admin.admin.tipo_puntaje:
+        class: AdminBundle\Admin\TipoPuntajeAdmin
+        arguments: [~, LogicBundle\Entity\TipoPuntaje, AdminBundle:TipoPuntajeAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: TipoPuntaje }
+
+    admin.admin.torneo_base:
+        class: AdminBundle\Admin\TorneoBaseAdmin
+        arguments: [~, LogicBundle\Entity\TorneoBase, AdminBundle:TorneoBaseAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: TorneoBase }
+
+    admin.admin.indicador:
+        class: AdminBundle\Admin\IndicadorAdmin
+        arguments: [~, LogicBundle\Entity\Indicador, AdminBundle:IndicadorAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Indicador }
+
+    admin.admin.sancion:
+        class: AdminBundle\Admin\SancionAdmin
+        arguments: [~, LogicBundle\Entity\Sancion, AdminBundle:SancionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Sancion }
+
+    admin.admin.tipo_relacion:
+        class: AdminBundle\Admin\TipoRelacionAdmin
+        arguments: [~, LogicBundle\Entity\TipoRelacion, AdminBundle:TipoRelacionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: TipoRelacion }
+
+    admin.admin.item_desempate:
+        class: AdminBundle\Admin\ItemDesempateAdmin
+        arguments: [~, LogicBundle\Entity\ItemDesempate, AdminBundle:ItemDesempateAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: ItemDesempate }
+
+    admin.admin.justificacion_partido:
+        class: AdminBundle\Admin\JustificacionPartidoAdmin
+        arguments: [~, LogicBundle\Entity\JustificacionPartido, AdminBundle:JustificacionPartidoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: JustificacionPartido }
+
+    admin.admin.banner_sim:
+        class: AdminBundle\Admin\BannerSimAdmin
+        arguments: [~, LogicBundle\Entity\BannerSim, AdminBundle:BannerSimAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: BannerSim }
+
+    admin.admin.justificacion_w:
+        class: AdminBundle\Admin\JustificacionWAdmin
+        arguments: [~, LogicBundle\Entity\JustificacionW, AdminBundle:JustificacionWAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: JustificacionW }
+
+    admin.admin.programa:
+        class: AdminBundle\Admin\ProgramaAdmin
+        arguments: [~, LogicBundle\Entity\Programa, AdminBundle:ProgramaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Programa }
+
+    admin.admin.tipo_articulo:
+        class: AdminBundle\Admin\TipoArticuloAdmin
+        arguments: [~, LogicBundle\Entity\TipoArticulo, AdminBundle:TipoArticuloAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: TipoArticulo }
+
+    admin.admin.terminos_y_condiciones:
+        class: AdminBundle\Admin\TerminosYCondicionesAdmin
+        arguments: [~, LogicBundle\Entity\TerminosYCondiciones, AdminBundle:TerminosYCondicionesAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: TerminosYCondiciones }
+
+    admin.admin.resolucion:
+        class: AdminBundle\Admin\ResolucionAdmin
+        arguments: [~, LogicBundle\Entity\Resolucion, AdminBundle:ResolucionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Resolucion }
+
+    admin.admin.tipo_justificacion:
+        class: AdminBundle\Admin\TipoJustificacionAdmin
+        arguments: [~, LogicBundle\Entity\TipoJustificacion, AdminBundle:TipoJustificacionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: TipoJustificacion }
+
+    admin.admin.tipo_falta:
+        class: AdminBundle\Admin\TipoFaltaAdmin
+        arguments: [~, LogicBundle\Entity\TipoFalta, AdminBundle:TipoFaltaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: TipoFalta }
+
+    admin.admin.disciplina:
+        class: AdminBundle\Admin\DisciplinaAdmin
+        arguments: [~, LogicBundle\Entity\Disciplina, AdminBundle:DisciplinaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Disciplina }
+
+    admin.admin.motivo_reseva:
+        class: AdminBundle\Admin\MotivoResevaAdmin
+        arguments: [~, LogicBundle\Entity\MotivoReseva, AdminBundle:MotivoResevaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: MotivoReseva }
+
+    admin.admin.fuente_financiacion:
+        class: AdminBundle\Admin\FuenteFinanciacionAdmin
+        arguments: [~, LogicBundle\Entity\FuenteFinanciacion, AdminBundle:FuenteFinanciacionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: FuenteFinanciacion }
+
+    admin.admin.tipo_escenario:
+        class: AdminBundle\Admin\TipoEscenarioAdmin
+        arguments: [~, LogicBundle\Entity\TipoEscenario, AdminBundle:TipoEscenarioAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: TipoEscenario }
+
+    admin.admin.tipo_evento:
+        class: AdminBundle\Admin\TipoEventoAdmin
+        arguments: [~, LogicBundle\Entity\TipoEvento, AdminBundle:TipoEventoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: TipoEvento }
+
+    admin.admin.caracterizacion_usuario:
+        class: AdminBundle\Admin\CaracterizacionUsuarioAdmin
+        arguments: [~, LogicBundle\Entity\CaracterizacionUsuario, AdminBundle:CaracterizacionUsuarioAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: CaracterizacionUsuario }
+
+    admin.admin.bonificacion_juzgamiento:
+        class: AdminBundle\Admin\BonificacionJuzgamientoAdmin
+        arguments: [~, LogicBundle\Entity\BonificacionJuzgamiento, AdminBundle:BonificacionJuzgamientoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: BonificacionJuzgamiento }
+
+    admin.admin.categoria_evento:
+        class: AdminBundle\Admin\CategoriaEventoAdmin
+        arguments: [~, LogicBundle\Entity\CategoriaEvento, AdminBundle:CategoriaEventoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: CategoriaEvento }
+
+    admin.admin.subcategoria_disciplina:
+        class: AdminBundle\Admin\SubcategoriaDisciplinaAdmin
+        arguments: [~, LogicBundle\Entity\SubcategoriaDisciplina, AdminBundle:SubcategoriaDisciplinaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: SubcategoriaDisciplina }
+
+    admin.admin.escenario_deportivo:
+        class: AdminBundle\Admin\EscenarioDeportivoAdmin
+        arguments: [~, LogicBundle\Entity\EscenarioDeportivo, AdminBundle:EscenarioDeportivoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: EscenarioDeportivo }
+
+    admin.admin.establecimiento_educativo:
+        class: AdminBundle\Admin\EstablecimientoEducativoAdmin
+        arguments: [~, LogicBundle\Entity\EstablecimientoEducativo, AdminBundle:EstablecimientoEducativoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: EstablecimientoEducativo }
+
+    admin.admin.unidad_medida:
+        class: AdminBundle\Admin\UnidadMedidaAdmin
+        arguments: [~, LogicBundle\Entity\UnidadMedida, AdminBundle:UnidadMedidaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: UnidadMedida }
+
+    admin.admin.accion:
+        class: AdminBundle\Admin\AccionAdmin
+        arguments: [~, LogicBundle\Entity\Accion, AdminBundle:AccionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Accion }
+
+    admin.admin.observacion_escenario:
+        class: AdminBundle\Admin\ObservacionEscenarioAdmin
+        arguments: [~, LogicBundle\Entity\ObservacionEscenario, AdminBundle:ObservacionEscenarioAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: ObservacionEscenario }
+
+    admin.admin.festivo:
+        class: AdminBundle\Admin\FestivoAdmin
+        arguments: [~, LogicBundle\Entity\Festivo, AdminBundle:FestivoAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Festivo }
+
+    admin.admin.etnia:
+        class: AdminBundle\Admin\EtniaAdmin
+        arguments: [~, LogicBundle\Entity\Etnia, AdminBundle:EtniaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Etnia }
+
+    admin.admin.categoria_rama:
+        class: AdminBundle\Admin\CategoriaRamaAdmin
+        arguments: [~, LogicBundle\Entity\CategoriaRama, AdminBundle:CategoriaRamaAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: CategoriaRama }
+
+    admin.admin.matriz_programacion:
+        class: AdminBundle\Admin\MatrizProgramacionAdmin
+        arguments: [~, LogicBundle\Entity\MatrizProgramacion, AdminBundle:MatrizProgramacionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: MatrizProgramacion }
+
+    admin.admin.tipo_componente:
+        class: AdminBundle\Admin\TipoComponenteAdmin
+        arguments: [~, LogicBundle\Entity\TipoComponente, AdminBundle:TipoComponenteAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: TipoComponente }
+
+    admin.admin.punto_atencion:
+        class: AdminBundle\Admin\PuntoAtencionAdmin
+        arguments: [~, LogicBundle\Entity\PuntoAtencion, AdminBundle:PuntoAtencionAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: PuntoAtencion }

@@ -13,6 +13,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ItemDesempate {
 
+    public function __toString() {
+        return $this->nombre ? $this->nombre : ''   ;
+    }
     /**
      * @var int
      *

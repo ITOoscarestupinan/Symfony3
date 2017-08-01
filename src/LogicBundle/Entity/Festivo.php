@@ -13,6 +13,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Festivo {
 
+    public function __toString() {
+        return $this->nombre ? $this->nombre : ''   ;
+    }
     /**
      * @var int
      *

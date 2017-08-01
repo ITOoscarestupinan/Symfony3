@@ -13,6 +13,10 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Accion {
 
+    public function __toString() {
+        return $this->nombre ? $this->nombre : ''   ;
+    }
+
     /**
      * @var int
      *
@@ -35,7 +39,7 @@ class Accion {
      * @ORM\Column(name="nombre", type="string", length=255)
      */
     private $nombre;
-    
+
     /**
      * @var \DateTime $fechaCreacion
      *
@@ -105,7 +109,6 @@ class Accion {
         return $this->nombre;
     }
 
-
     /**
      * Set fechaCreacion
      *
@@ -113,8 +116,7 @@ class Accion {
      *
      * @return Accion
      */
-    public function setFechaCreacion($fechaCreacion)
-    {
+    public function setFechaCreacion($fechaCreacion) {
         $this->fechaCreacion = $fechaCreacion;
 
         return $this;
@@ -125,8 +127,7 @@ class Accion {
      *
      * @return \DateTime
      */
-    public function getFechaCreacion()
-    {
+    public function getFechaCreacion() {
         return $this->fechaCreacion;
     }
 
@@ -137,8 +138,7 @@ class Accion {
      *
      * @return Accion
      */
-    public function setFechaActualizacion($fechaActualizacion)
-    {
+    public function setFechaActualizacion($fechaActualizacion) {
         $this->fechaActualizacion = $fechaActualizacion;
 
         return $this;
@@ -149,8 +149,8 @@ class Accion {
      *
      * @return \DateTime
      */
-    public function getFechaActualizacion()
-    {
+    public function getFechaActualizacion() {
         return $this->fechaActualizacion;
     }
+
 }

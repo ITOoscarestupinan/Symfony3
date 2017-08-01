@@ -1,0 +1,336 @@
+LogicBundle\Entity\Accion:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\AtributoDisciplina:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\BannerSim:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\BonificacionJuzgamiento:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\CaracterizacionUsuario:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\CategoriaDisciplina:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\CategoriaEvento:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\CategoriaRama:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Disciplina:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\EscenarioDeportivo:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\EstablecimientoEducativo:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\EstadoContrato:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Etnia:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Festivo:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\FuenteFinanciacion:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Indicador:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\ItemDesempate:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\JustificacionPartido:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\JustificacionW:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\MatrizProgramacion:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\ModalidadEvento:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\MotivoReseva:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\ObservacionEscenario:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Oferta:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\AtributoDisciplina:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Programa:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Proyecto:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\PuntoAtencion:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Rama:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Resolucion:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\Sancion:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\SistemaPuntaje:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\SubcategoriaDisciplina:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TerminosYCondiciones:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TerminosYCondicionesEvento:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoArticulo:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoComponente:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoDocumento:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoEscenario:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoEvento:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoFalta:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoJustificacion:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoPuntaje:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoRecurso:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TipoRelacion:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\TorneoBase:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\UnidadMedida:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+
+LogicBundle\Entity\VariableGlobal:
+    properties:
+        nombre:
+            - NotNull: ~
+        codigo:
+            - NotNull: ~
+            

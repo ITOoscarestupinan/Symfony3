@@ -13,6 +13,10 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class CaracterizacionUsuario {
 
+    public function __toString() {
+        return $this->nombre ? $this->nombre : ''   ;
+    }
+
     /**
      * @var int
      *
