@@ -15,7 +15,7 @@ class ResolucionAdmin extends AbstractAdmin {
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper) {
         $datagridMapper
-                ->add('codigo')
+                ->add('codigo', null, array('label' => 'formulario.codigo'))
                 ->add('nombre')
         ;
     }
@@ -25,7 +25,7 @@ class ResolucionAdmin extends AbstractAdmin {
      */
     protected function configureListFields(ListMapper $listMapper) {
         $listMapper
-                ->add('codigo')
+                ->add('codigo', null, array('label' => 'formulario.codigo'))
                 ->add('nombre')
                 ->add('_action', null, array(
                     'actions' => array(
@@ -42,7 +42,7 @@ class ResolucionAdmin extends AbstractAdmin {
      */
     protected function configureFormFields(FormMapper $formMapper) {
         $formMapper
-                ->add('codigo')
+                ->add('codigo', null, array('label' => 'formulario.codigo'))
                 ->add('nombre')
         ;
     }
@@ -52,7 +52,7 @@ class ResolucionAdmin extends AbstractAdmin {
      */
     protected function configureShowFields(ShowMapper $showMapper) {
         $showMapper
-                ->add('codigo')
+                ->add('codigo', null, array('label' => 'formulario.codigo'))
                 ->add('nombre')
         ;
     }

@@ -26,11 +26,11 @@ sonata_admin:
         groups:
             sonata_user:
                 roles: [ROLE_SUPER_ADMIN]
-                label: 'Seguridad y acceso'
+                label: 'Cosas admin'
                 icon:   '<i class="fa fa-lock"></i>'
             admin:
                 roles: [ROLE_SUPER_ADMIN]
-                label: 'Cosas admin'
+                label: 'Otras cosas admin'
                 icon:   '<i class="fa fa-signal"></i>'
 
         blocks:

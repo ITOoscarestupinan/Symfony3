@@ -12,6 +12,7 @@ menu publico:
     observatorio: Observatorio
 
 formulario:
+    codigo: Código
     login:
         registrarse: Registrarse
     reestablecer contrasena:
