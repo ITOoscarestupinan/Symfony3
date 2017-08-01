@@ -33,8 +33,13 @@ class AppKernel extends Kernel {
             new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new Liuggio\ExcelBundle\LiuggioExcelBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Nelmio\CorsBundle\NelmioCorsBundle(),
+            // Inder Bundles    
             new LogicBundle\LogicBundle(),
             new AdminBundle\AdminBundle(),
+            new ServicesBundle\ServicesBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

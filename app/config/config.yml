@@ -6,6 +6,7 @@ imports:
     - { resource: doctrine_extensions.yml }
     - { resource: "@LogicBundle/Resources/config/config.yml" }
     - { resource: "@AdminBundle/Resources/config/config.yml" }
+    - { resource: "@ServicesBundle/Resources/config/config.yml" }
 parameters:
     locale: es
 # Put parameters here that don't need to change on each machine where the app is deployed
