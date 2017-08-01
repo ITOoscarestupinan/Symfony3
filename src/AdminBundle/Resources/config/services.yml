@@ -7,7 +7,7 @@ services:
         class: AdminBundle\Admin\CategoriaDisciplinaAdmin
         arguments: [~, LogicBundle\Entity\CategoriaDisciplina, AdminBundle:CategoriaDisciplinaAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Categoria de Disciplina }
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Categoría de Disciplina }
 
     admin.admin.tipo_recurso:
         class: AdminBundle\Admin\TipoRecursoAdmin
@@ -211,7 +211,7 @@ services:
         class: AdminBundle\Admin\CategoriaEventoAdmin
         arguments: [~, LogicBundle\Entity\CategoriaEvento, AdminBundle:CategoriaEventoAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Categoria de Evento }
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Categoría de Evento }
 
     admin.admin.subcategoria_disciplina:
         class: AdminBundle\Admin\SubcategoriaDisciplinaAdmin
@@ -265,7 +265,7 @@ services:
         class: AdminBundle\Admin\CategoriaRamaAdmin
         arguments: [~, LogicBundle\Entity\CategoriaRama, AdminBundle:CategoriaRamaAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Categoria de Rama }
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Categoría de Rama }
 
     admin.admin.matriz_programacion:
         class: AdminBundle\Admin\MatrizProgramacionAdmin
