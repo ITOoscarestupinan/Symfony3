@@ -4,12 +4,15 @@ namespace LogicBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use JMS\Serializer\Annotation as Serializer;
+
 
 /**
  * CategoriaEvento
  *
  * @ORM\Table(name="categoria_evento")
  * @ORM\Entity(repositoryClass="LogicBundle\Repository\CategoriaEventoRepository")
+ * @Serializer\ExclusionPolicy("all")
  */
 class CategoriaEvento {
 
@@ -23,6 +26,7 @@ class CategoriaEvento {
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Expose
      */
     private $id;
 
@@ -30,6 +34,7 @@ class CategoriaEvento {
      * @var int
      *
      * @ORM\Column(name="codigo", type="integer", unique=true)
+     * @Serializer\Expose
      */
     private $codigo;
 
@@ -37,6 +42,7 @@ class CategoriaEvento {
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=255)
+     * @Serializer\Expose
      */
     private $nombre;
     
@@ -44,7 +50,9 @@ class CategoriaEvento {
      * @var \DateTime $fechaCreacion
      *
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(name="fecha_creacion", type="datetime")
+     * @ORM\Column(name="fecha_creacion", type="date")
+     * @Serializer\Expose
+     * @Serializer\Type("DateTime<'Y-m-d'>")
      */
     protected $fechaCreacion;
 
@@ -52,7 +60,9 @@ class CategoriaEvento {
      * @var \DateTime $fechaActualizacion
      *
      * @Gedmo\Timestampable(on="update")
-     * @ORM\Column(name="fecha_actualizacion", type="datetime")
+     * @ORM\Column(name="fecha_actualizacion", type="date")
+     * @Serializer\Expose
+     * @Serializer\Type("DateTime<'Y-m-d'>")
      */
     protected $fechaActualizacion;
 

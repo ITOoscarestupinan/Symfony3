@@ -43,7 +43,7 @@ class Festivo {
      * @var \DateTime $fechaCreacion
      *
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(name="fecha_creacion", type="datetime")
+     * @ORM\Column(name="fecha_creacion", type="date")
      */
     protected $fechaCreacion;
 
@@ -51,7 +51,7 @@ class Festivo {
      * @var \DateTime $fechaActualizacion
      *
      * @Gedmo\Timestampable(on="update")
-     * @ORM\Column(name="fecha_actualizacion", type="datetime")
+     * @ORM\Column(name="fecha_actualizacion", type="date")
      */
     protected $fechaActualizacion;
 

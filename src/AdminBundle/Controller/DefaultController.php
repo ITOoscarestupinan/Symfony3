@@ -11,7 +11,7 @@ class DefaultController extends Controller {
      * @Route("/")
      */
     public function indexAction() {
-        return $this->render('AdminBundle:Default:index.html.twig');
+        return $this->redirect($this->generateUrl('sonata_admin_dashboard'));
     }
 
 }

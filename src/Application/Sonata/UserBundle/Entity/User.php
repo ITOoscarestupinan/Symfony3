@@ -31,7 +31,6 @@ use JMS\Serializer\Annotation as Serializer;
  *
  * @ORM\Table(name="fos_user_user")
  * @ORM\Entity(repositoryClass="Application\Sonata\UserBundle\Entity\Repository\UserRepository")
- * @Serializer\ExclusionPolicy("all")
  */
 class User extends BaseUser {
 

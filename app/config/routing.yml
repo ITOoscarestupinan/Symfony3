@@ -1,3 +1,7 @@
+homepage:
+    path:   /
+    defaults:  { _controller: AdminBundle:Default:index}
+    
 services:
     resource: "@ServicesBundle/Controller/"
     type:     annotation
@@ -11,6 +15,7 @@ logic:
 inder_admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix:   /
+
     
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

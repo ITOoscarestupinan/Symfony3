@@ -10,30 +10,30 @@ use ServicesBundle\Tools\ResponseBuilder;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use FOS\RestBundle\Controller\Annotations\Get;
 
-class DefaultController extends FOSRestController {
+class EventosController extends FOSRestController {
 
     /**
-     * Lista de usuario
+     * Lista de eventos
      *
      * @ApiDoc(
-     *  section="Usuario",
+     *  section="Evento",
      *  resource=true,
-     *  description="Lista de usuarios",
+     *  description="Lista de categorias de eventos",
      *  filters={
      *      {"name"="pagina", "dataType"="integer"},
      *      {"name"="elementos_por_pagina", "dataType"="integer"}
      *  }
      * )
-     * @Get("/usuarios")
+     * @Get("/categorias_eventos")
      */
     public function getAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
-        $dql = "SELECT u from ApplicationSonataUserBundle:User u";
-        $usuarios = ResponseBuilder::getCollection($request, $em, $dql);
-        if ($usuarios === null) {
-            return new View("there are no users exist", Response::HTTP_NOT_FOUND);
+        $dql = "SELECT e from LogicBundle:CategoriaEvento e";
+        $eventos = ResponseBuilder::getCollection($request, $em, $dql);
+        if ($eventos === null) {
+            return new View("there are no events exist", Response::HTTP_NOT_FOUND);
         }
-        return $usuarios;
+        return $eventos;
     }
 
 }
