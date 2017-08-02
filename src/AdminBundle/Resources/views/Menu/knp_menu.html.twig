@@ -23,10 +23,6 @@
                 {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
                     {% import _self as knp_menu %}
                     {{ block('children') }}
-                    {% if item.name != "root" %}
-                        <li class="divider">
-                        </li>
-                    {% endif %}
                 {% endif %}
             {% endblock %}
 
@@ -43,7 +39,7 @@
                     {% set options = options|merge({'matchingDepth': currentOptions.matchingDepth - 1}) %}
                 {% endif %}
                 {% for item in currentItem.children %}
-                    <li {% if item.uri is null %}class="col-sm-3"{% endif %}>
+                    <li {% if item.uri is null %}class="dropdown-header"{% endif %}>
                         {{ block('item') }}
                     </li>
                 {% endfor %}
@@ -83,7 +79,9 @@
                         {%- endif %}
                         {# displaying the item #}
                         {% import _self as knp_menu %}
-                        <ul>
+                        {% if item.uri == null%}
+                            <ul class="contenido-colapsable ocultar-contenido">
+                        {% endif %}
                             {%- if item.uri is not empty and (not matcher.isCurrent(item) or options.currentAsLink) %}
                             {{ block('linkElement') }}
                             {%- else %}
@@ -94,7 +92,12 @@
                             {%- set childrenClasses = childrenClasses|merge(['menu_level_' ~ item.level]) %}
                             {%- set listAttributes = item.childrenAttributes|merge({'class': childrenClasses|join(' ') }) %}
                             {{ block('list') }}
-                        </ul>
+                        {% if item.uri == null%}
+                            </ul>
+                            <div class="mostrar-mas">
+                                <a href="#">Mostrar más</a>
+                            </div>
+                        {% endif %}
                     {% endif %}
                     {% endblock %}
 

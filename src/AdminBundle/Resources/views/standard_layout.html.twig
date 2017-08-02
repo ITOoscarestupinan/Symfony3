@@ -263,7 +263,7 @@ file that was distributed with this source code.
                                                 {% endblock sonata_sidebar_search %}
                                                 <li class="dropdown mega-dropdown">
                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'menu publico.sistema informacion'|trans}}<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                                                    <ul class="dropdown-menu mega-dropdown-menu row">
+                                                    <ul class="dropdown-menu mega-dropdown-menu">
 
                                                         {% block sonata_side_nav %}
                                                             {% block side_bar_before_nav %} {% endblock %}
@@ -274,7 +274,6 @@ file that was distributed with this source code.
                                                     </ul>
                                                 </li>
                                             {% endif %}
-                                            {% include 'AdminBundle:Menu:icono_perfil.html.twig'%}
                                         </ul>
                                     </div>                               
                                 </nav>
@@ -292,21 +291,21 @@ file that was distributed with this source code.
                                             {% include 'AdminBundle:Menu:icono_perfil.html.twig'%}
                                     </ul>
                                 </div>
-                                <!--<hr>
-    <div class="grupos-botones">
-    <ul>
-    <li><a href="#">Contraste</a></li>
-    <li><a href="#">Inclusión</a></li>
-    </ul>
-    </div>
-    <hr>
-    <div class="grupos-botones">
-    <ul>
-    <li><a href="#">Ayuda</a></li>
-    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-    </ul>
-    </div>-->
+                                {#<hr>
+                                <div class="grupos-botones">
+                                    <ul>
+                                        <li><a href="#">Contraste</a></li>
+                                        <li><a href="#">Inclusión</a></li>
+                                    </ul>
+                                </div>
                                 <hr>
+                                <div class="grupos-botones">
+                                    <ul>
+                                        <li><a href="#">Ayuda</a></li>
+                                        <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                                <hr>#}
                                 <div class="grupos-botones">
                                     <ul>
                                         <li><a href="#"><i class="fa fa-language" aria-hidden="true"></i></a></li>
@@ -322,34 +321,6 @@ file that was distributed with this source code.
 
                             <!-- /.navbar-custom-menu -->
                         </div>
-
-
-                        {% block sonata_top_nav_menu %}
-                            {#{% if app.user and is_granted('ROLE_SONATA_ADMIN') %}
-                                <div class="navbar-custom-menu">
-                                    <ul class="nav navbar-nav">
-                                        {% block sonata_top_nav_menu_add_block %}
-                                            <li class="dropdown">
-                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                                    <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                                </a>
-                                                {% include sonata_admin.adminPool.getTemplate('add_block') %}
-                                            </li>
-                                        {% endblock %}
-                                        {% block sonata_top_nav_menu_user_block %}
-                                            <li class="dropdown user-menu">
-                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                                    <i class="fa fa-user fa-fw" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                                </a>
-                                                <ul class="dropdown-menu dropdown-user">
-                                                    {% include sonata_admin.adminPool.getTemplate('user_block') %}
-                                                </ul>
-                                            </li>
-                                        {% endblock %}
-                                    </ul>
-                                </div>
-                            {% endif %}#}
-                        {% endblock %}
                     </nav>
                 {% endblock sonata_nav %}
             </header>

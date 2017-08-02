@@ -38,7 +38,7 @@
 
             {% block spanElement %}
                 {% spaceless %}
-                    <li class="dropdown-header">
+                    <li >
                         {% set translation_domain = item.extra('label_catalogue') %}
                         {% set icon = item.extra('icon')|default('') %}
                         {{ icon|raw }}
