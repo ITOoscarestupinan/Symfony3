@@ -1,9 +1,0 @@
-<?php
-
-namespace AdminBundle\Controller;
-
-use Sonata\AdminBundle\Controller\CRUDController;
-
-class CategoriaDisciplinaAdminController extends CRUDController {
-    
-}

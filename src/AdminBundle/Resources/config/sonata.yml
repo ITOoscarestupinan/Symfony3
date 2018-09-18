@@ -21,15 +21,14 @@ sonata_admin:
         groups:
             sonata_user:
                 roles: [ROLE_SUPER_ADMIN]
-                label: 'Cosas admin'
+                label: 'User manage'
                 icon:   '<i class="fa fa-lock"></i>'
             admin:
                 roles: [ROLE_SUPER_ADMIN]
-                label: 'Otras cosas admin'
+                label: 'Admin'
                 icon:   '<i class="fa fa-signal"></i>'
 
         blocks:
             # display a dashboard block
-            - { position: left,  type: sonata.admin.block.admin_list, settings: { groups: [sonata_user] } }
-            - { position: right,  type: sonata.admin.block.admin_list, settings: { groups: [admin] } }
+            - { position: left,  type: sonata.admin.block.admin_list, settings: { groups: [sonata_user,admin] } }
 

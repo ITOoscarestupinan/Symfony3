@@ -11,39 +11,30 @@ file that was distributed with this source code.
 
 {% extends base_template %}
 
+{% block sonata_nav %}
+{% endblock sonata_nav %}
+
+{% block logo %}
+{% endblock logo %}
+
+{% block sonata_left_side %}
+{% endblock sonata_left_side %}
+
+{% block body_attributes %}class="sonata-bc login-page"{% endblock %}
+
 {% block sonata_wrapper %}
 
-    <div class="content-wrapper ajuste-contenido">
-        <!-- Content Header (Page header) -->
-        <div class="container">                    
-
-            <!-- Main content -->
-            <section class="content">
-
-                <!-- Main row -->
-                <div class="row">
-                    <!-- Left col -->
-                    <section class="col-lg-12 connectedSortable">
-                        <div class="box box-primary">
-                            <div class="login-box">
-                                <div class="login-logo">
-                                    <a href="{{ path('sonata_admin_dashboard') }}">
-                                        <span>{{ 'titulo.solicitud contrasena' |trans}}</span>
-                                    </a>
-                                </div>
-                                <div class="login-box-body">
-                                    <p>{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime}, 'FOSUserBundle')|nl2br }}</p>
-                                    <a href="{{ path('sonata_user_admin_security_login') }}">{{ 'titulo.regresar inicio' |trans}}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- /.Left col -->
-                </div>
-                <!-- /.row (main row) -->
-
-            </section>
-            <!-- /.content -->
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="{{ path('sonata_admin_dashboard') }}">
+                {% if 'single_text' == admin_pool.getOption('title_mode') or 'both' == admin_pool.getOption('title_mode') %}
+                    <span>{{ admin_pool.title }}</span>
+                {% endif %}
+            </a>
+        </div>
+        <div class="login-box-body">
+            <p>{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime}, 'FOSUserBundle')|nl2br }}</p>
+            <a href="{{ path('sonata_user_admin_security_login') }}">{{ 'title_user_authentication'|trans({}, 'SonataUserBundle') }}</a>
         </div>
     </div>
 

@@ -4,6 +4,6 @@ namespace AdminBundle\Controller;
 
 use Sonata\AdminBundle\Controller\CRUDController;
 
-class TipoRelacionAdminController extends CRUDController {
-    
+class UsuarioAdminController extends CRUDController {
+
 }
