@@ -14,3 +14,9 @@ services:
         arguments: [~, LogicBundle\Entity\Disciplina, AdminBundle:DisciplinaAdmin]
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Disciplina }
+
+    admin.admin.imagen:
+        class: AdminBundle\Admin\ImagenAdmin
+        arguments: [~, LogicBundle\Entity\Imagen, AdminBundle:ImagenAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Imagen }
